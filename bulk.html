@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bulk Phone Numbers Generator</title>
+    <script src="jquery-3.6.1.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="fonts">
+    <div class="header">
+      <br>
+      <marquee direction="left">
+        INT219 CA-3 Project by Rajnish Tripathi (12011284)
+      </marquee>
+    </div>
+
+    <h1>Generate a Random Phone Numbers in Bulk</h1>
+      <div class="container">
+        <div class="frm">
+          <label for="CountryCode"><b style="color: #4d545a">CountryCode?</b></label><br>
+          <select name="CCodes" id="CC">
+            <option value="IN">India +91</option>
+
+            <option value="AFG">Afganistan +93</option>
+            <option value="ARG">Argentina +54</option>
+
+            <option value="BEL">Belgium +32</option>
+            <option value="BRA">Brazil +55</option>
+
+            <option value="CHILE">Chile +56</option>
+            <option value="CHINA">China +86</option>
+
+            <option value="FRA">France +33</option>
+            <option value="GER">Germany +49</option>
+
+            <option value="Pak">Pakistan +92</option>
+            <option value="Peru">Peru +51</option>
+
+            <option value="US">USA +1</option>
+          </select>
+          <br />
+          <label for="TotalNumbers">Total Numbers</label>
+          <input type="text" name="amount" id="numb" />
+          <br /><br />
+          <button class="link" href="#">
+            Generate number
+          </button>  
+        </div>
+        <br>
+        <div class="fin">
+          <p class="result"></p>
+        </div> 
+      </div>
+    <div class="lower fonts">
+      <div class="left">
+          <h2>Random Phone Number Generator</h2>
+          <p>
+          You are using this free online tool to generate random phone numbers. You can use these when you want to promote something without using real data.
+            <br><br>
+          Remember the Numbers you generate might be legit phone numbers so any missuse of it may lead you into trouble.
+          </p>
+          <h3>
+          Frequently asked questions about telephone numbers
+          </h3>
+          <ol>
+          <li>
+          Can this service used to receive SMS or confirmations?<br>
+          <b>No.</b> These numbers cannot be used to receive messages.
+          </li><br>
+          <li> What are the steps to generate random phone numbers?
+              <br> The steps to generate a valid phone number are:
+              <ol>
+              <li> Select your desired country.</li>
+              <li> Click on the generate button.</li>
+              </ol>
+          </li><br>
+          <li> Are these mobile numbers valid? <br>
+          <b>Yes</b>, some or all these numbers might be real, our tool only genrate these randomly.
+          </li>
+          <br>
+          <li> Do you have any API for this tool? <br>
+            <b>No</b>. We have use our own logic to generate these phone numbers.
+          </li><br>
+          <li>Where can I use this phone number?<br>
+          You can easily use this phone number to promote your business. If a website or an app asks you for a phone number as mendatory field (Not for verification), then you need to use the one which this tool has generated.
+          </li><br> 
+          <li> Will I have any problems with using this phone number generator? <br>
+          No, you won't have any problems because the number looks like the real ones. All you need to do is to generate it.
+          </li><br>
+          <li> Is this generator free? <br>
+          Yes, this generator is 100% free, which means that you don't have to pay any of your money to use it.
+          </li>
+          </ol>
+          <br>
+      </div>
+      <div class="right fonts">
+          <h3>Releted Phone Services</h3>
+          <ul>
+            <li><a href="index.html">Single Phone Number</a></li>
+          </ul>
+      </div>
+</div>
+<div class="footer">
+  <div style="margin: 10px 0 10px 100px;">
+    <h4 style="color: yellow; size: 10px;">
+      © 2022 - Present
+    </h4>
+    <p style="color: rgb(83, 53, 231); size: 10px;"><b>Privacy </b></p>
+  </div>
+</div>
+
+    <script>
+        var min = 100000000;
+        var max = 999999999;
+  
+        $(document).ready(function () {
+          $(".link").on("click", function () {
+            $(".result").html(randomNumber());
+           
+          });
+        });
+  
+        function randomNumber() {
+            var total = $("#numb").val();
+            //alert(total)
+            let text = "";
+  
+            for (let i = 0; i < total; i++) {
+                /*var randomNumber = Math.floor(Math.random()*(max-min+1)+min);
+                    var code = $('#CC option:selected').text();
+                    text += code+"-"+"9"+ randomNumber + "<br>"; */ 
+  
+            if ($("#CC option:selected").val() == "IN") {
+              var min = 100000000;
+              var max = 999999999;
+              var randomNumber = Math.floor(
+                Math.random() * (max - min + 1) + min
+              );
+              var code = "+91";
+              text += code + "-" + "9" + randomNumber + "<br>";
+              //alert($("#CC option:selected").val());
+            }
+  
+            if ($("#CC option:selected").val() == "US") {
+              var min = 1000000;
+              var max = 9999999;
+              var randomNumber = Math.floor(
+                Math.random() * (max - min + 1) + min
+              );
+              var code = "+1";
+              text += code + "-" + "(682)" + randomNumber + "<br>";
+            }
+  
+            if ($("#CC option:selected").val() == "Peru") {
+              var min = 1000000;
+              var max = 9999999;
+              var randomNumber = Math.floor(
+                Math.random() * (max - min + 1) + min
+              );
+              var code = "+51";
+              text += code + "-" + "99" + randomNumber + "<br>";
+            }
+  
+            if ($("#CC option:selected").val() == "Pak") {
+              var min = 1000000;
+              var max = 9999999;
+              var randomNumber = Math.floor(
+                Math.random() * (max - min + 1) + min
+              );
+              var code = "+92";
+              text += code + "-" + "(682)" + randomNumber + "<br>";
+            }
+            
+
+            if ($("#CC option:selected").val() == "AFG") {
+              var min = 10000000;
+              var max = 99999999;
+              var randomNumber = Math.floor(
+                Math.random() * (max - min + 1) + min
+              );
+              var code = "+93";
+              text += code + "-" + "9" + randomNumber + "<br>";
+            }
+
+            if ($("#CC option:selected").val() == "ARG") {
+              var min = 100000000;
+              var max = 999999999;
+              var randomNumber = Math.floor(
+                Math.random() * (max - min + 1) + min
+              );
+              var code = "+54";
+              text += code + "-" + "7" + randomNumber + "<br>";
+            }
+
+            if ($("#CC option:selected").val() == "BEL") {
+              var min = 1000000;
+              var max = 9999999;
+              var randomNumber = Math.floor(
+                Math.random() * (max - min + 1) + min
+              );
+              var code = "+32";
+              text += code + "-" + "08" + randomNumber + "<br>";
+            }
+
+            if ($("#CC option:selected").val() == "BRA") {
+              var min = 1000000;
+              var max = 9999999;
+              var randomNumber = Math.floor(
+                Math.random() * (max - min + 1) + min
+              );
+              var code = "+55";
+              text += code + "-" + "537" + randomNumber + "<br>";
+            }
+
+            if ($("#CC option:selected").val() == "CHILE") {
+              var min = 1000000;
+              var max = 9999999;
+              var randomNumber = Math.floor(
+                Math.random() * (max - min + 1) + min
+              );
+              var code = "+56";
+              text += code + "-" + "205" + randomNumber + "<br>";
+            }
+
+            if ($("#CC option:selected").val() == "CHINA") {
+              var min = 100000000;
+              var max = 999999999;
+              var randomNumber = Math.floor(
+                Math.random() * (max - min + 1) + min
+              );
+              var code = "+86";
+              text += code + "-" + "18" + randomNumber + "<br>";
+            }
+
+            if ($("#CC option:selected").val() == "FRA") {
+              var min = 10000000;
+              var max = 99999999;
+              var randomNumber = Math.floor(
+                Math.random() * (max - min + 1) + min
+              );
+              var code = "+33";
+              text += code + "-" + "6" + randomNumber + "<br>";
+            }
+
+            if ($("#CC option:selected").val() == "GER") {
+              var min = 100000000;
+              var max = 999999999;
+              var randomNumber = Math.floor(
+                Math.random() * (max - min + 1) + min
+              );
+              var code = "+49";
+              text += code + "-" + "07" + randomNumber + "<br>";
+            }
+          } 
+            
+            return text;
+        }
+    </script>
+  </body>
+</html>
